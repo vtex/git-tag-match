@@ -1,7 +1,7 @@
 {
   "name": "git-tag-match",
   "version": "1.0.0",
-  "description": "",
+  "description": "Check if the git tag matches package.json version",
   "main": "index.js",
   "bin": {
     "git-tag-match": "./cli.js"
@@ -17,5 +17,12 @@
   "devDependencies": {
     "mock-fs": "^4.7.0",
     "stub-spawn-once": "^2.3.0"
-  }
+  },
+  "keywords": [
+    "git",
+    "tag",
+    "match",
+    "package",
+    "version"
+  ]
 }
