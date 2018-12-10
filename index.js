@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
@@ -10,12 +11,11 @@ function getGitVersion() {
 }
 
 function getReferenceFile(fileName) {
-  const filePath = path.join(process.cwd(), fileName)
-  const file = require(filePath)
-  return file
+  const file = fs.readFileSync(path.join(process.cwd(), fileName))
+  return JSON.parse(file)
 }
 
-function gitTagMatch(referenceFileName) {
+function matchGitTag(referenceFileName) {
   const file = getReferenceFile(referenceFileName)
   const referenceVersion = file.version
 
@@ -29,4 +29,4 @@ function gitTagMatch(referenceFileName) {
   })
 }
 
-module.exports = gitTagMatch
+module.exports = matchGitTag
