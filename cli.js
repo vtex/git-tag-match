@@ -14,7 +14,7 @@ gitTagMatch(fileName)
       return
     }
 
-    console.log('☑️  Alright!')
+    console.log(`☑️  Version in ${fileName} matches git tag.`)
     process.exit(0)
   })
   .catch(error => {
