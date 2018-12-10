@@ -15,7 +15,7 @@ function getReferenceFile(fileName) {
   return file
 }
 
-function matchGitTag(referenceFileName) {
+function gitTagMatch(referenceFileName) {
   const file = getReferenceFile(referenceFileName)
   const referenceVersion = file.version
 
@@ -29,4 +29,4 @@ function matchGitTag(referenceFileName) {
   })
 }
 
-module.exports = matchGitTag
+module.exports = gitTagMatch
