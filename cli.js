@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const argv = require('minimist')(process.argv.slice(2))
 const gitTagMatch = require('./index')
 
@@ -8,7 +9,7 @@ gitTagMatch(fileName)
     if (!result.match) {
       console.error(`Ops! Version in ${fileName} doesn't match git tag!`)
       console.error(`${fileName} \t${result.referenceVersion}`)
-      console.error('git \t\t', result.gitVersion)
+      console.error(`git \t\t${result.gitVersion}`)
       process.exit(1)
       return
     }

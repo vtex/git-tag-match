@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "git-tag-match": "./cli.js"
+  },
   "scripts": {
     "test": "node test.js"
   },
